@@ -7,9 +7,7 @@
 
 ---------
 
-npm >= 7.22.0 <br>
-react-native-cli = 2.0.1 <br>
-react-native = 0.65.1 <br>
+
 
 ## Setup
 
@@ -21,25 +19,10 @@ react-native = 0.65.1 <br>
 git clone git@github.com:EastHShin/SWCapstone_Opinio.git
 ```
 
-+ Install
-
-```
-cd front-end 
-cd plantrowth
-npm install
-```
-
-+ Run
-
-```
-react-native run-android
-```
----
-
 ## 목차
 1. 프로젝트 계획 동기
 2. 프로젝트 계획 목표
-3. Plantrowth 기능 설명
+3. EveryKid 기능 설명
     1. [회원가입, 로그인, 카카오 로그인, 로그아웃 기능]
     2. [유저기능]
     3. [식물 프로필 기능]
