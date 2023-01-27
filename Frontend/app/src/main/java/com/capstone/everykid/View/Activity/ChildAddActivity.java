@@ -1,9 +1,17 @@
 package com.capstone.everykid.View.Activity;
 
 import static android.content.ContentValues.TAG;
+<<<<<<< HEAD
 
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
+=======
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
 import android.graphics.ImageDecoder;
 import android.graphics.Rect;
 import android.os.Bundle;
@@ -32,13 +40,25 @@ import com.capstone.everykid.R;
 import com.capstone.everykid.RetrofitAPI.RegisterInterface;
 import com.capstone.everykid.RetrofitAPI.RetrofitAPI;
 import com.capstone.everykid.RetrofitClient;
+<<<<<<< HEAD
+=======
+import com.squareup.picasso.Picasso;
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+<<<<<<< HEAD
 import java.io.ByteArrayOutputStream;
 import java.io.StringReader;
+=======
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+import java.io.StringReader;
+import java.nio.charset.StandardCharsets;
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
 
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -58,8 +78,13 @@ public class ChildAddActivity extends AppCompatActivity {
     private EditText name, age;
     private Button btn;
     private PreferenceHelper preferenceHelper;
+<<<<<<< HEAD
     private Intent intent;
     private String pkid = Long.toString(createAccountItem.P_kid);
+=======
+    private Intent intent, intent2;
+    private String pkid = Long.toString(createAccountItem.P_kid), img;
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
 
 
     @Override
@@ -82,15 +107,27 @@ public class ChildAddActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+<<<<<<< HEAD
                 Log.e(TAG, "버튼 클릭");
                 registerChild();
                 Intent intent = new Intent(getApplicationContext(), MainParent.class);
                 startActivity(intent);
+=======
+                Log.e(TAG, "등록 버튼 클릭");
+                registerChild();
+                intent2 = new Intent(getApplicationContext(), MainParent.class);
+                intent2.putExtra("childadd", 1);
+                startActivity(intent2);
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
             }
         });
     }
 
     private void registerChild() {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
         String name1 = name.getText().toString();
         String age1 = age.getText().toString();
 
@@ -103,7 +140,11 @@ public class ChildAddActivity extends AppCompatActivity {
                 .build();
 
         RegisterInterface api = retrofit.create(RegisterInterface.class);
+<<<<<<< HEAD
         Call<String> call = api.setChildData(pkid, name1, age1);
+=======
+        Call<String> call = api.setChildData(pkid, name1, age1, img);
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
         call.enqueue(new Callback<String>() {
             @Override
             public void onResponse(@NonNull Call<String> call, @NonNull retrofit2.Response<String> response) {
@@ -111,14 +152,23 @@ public class ChildAddActivity extends AppCompatActivity {
                     String jsonResponse = response.body();
                     createAccountItem.C_name = name1;
                     createAccountItem.C_age = age1;
+<<<<<<< HEAD
                     createAccountItem.Child = "child";
                     Log.e(TAG, "등록 완료");
+=======
+
+                    Log.e(TAG, "등록 완료");
+                    Toast.makeText(ChildAddActivity.this, "아이 등록 완료", Toast.LENGTH_SHORT).show();
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
                     try {
                         parseRegData(jsonResponse);
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
                 }
             }
 
@@ -158,6 +208,11 @@ public class ChildAddActivity extends AppCompatActivity {
     //갤러리 여는 버튼
     public void opengallery(View v) {
         Intent intent = new Intent(Intent.ACTION_PICK);
+<<<<<<< HEAD
+=======
+        intent.addFlags(intent.FLAG_GRANT_READ_URI_PERMISSION);
+        intent.addFlags(intent.FLAG_GRANT_PERSISTABLE_URI_PERMISSION);
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
         intent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "image/*");
         startActivityForResult(intent, GET_GALLERY_IMAGE);
     }
@@ -168,15 +223,56 @@ public class ChildAddActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == GET_GALLERY_IMAGE && resultCode == RESULT_OK && data != null && data.getData() != null) {
             Uri selectedImageUri = data.getData();
+<<<<<<< HEAD
             imageview.setImageURI(selectedImageUri);
             createAccountItem.C_uri=selectedImageUri;
             try {
 
+=======
+
+            String uri = selectedImageUri.toString();
+
+            img = uri; //img변수에 uri 스트링으로 바꿔서 저장
+            createAccountItem.C_img=uri;
+            System.out.println("==========================="+createAccountItem.C_img);
+            Picasso.get().load(createAccountItem.C_img).into(imageview);
+            // imageview.setImageURI(selectedImageUri);
+
+            try {
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
             } catch (Exception e) {
 
             }
         }
     }
+<<<<<<< HEAD
+=======
+    public void setPreference(String key, String value) {
+        SharedPreferences pref = getSharedPreferences("CHILD", MODE_PRIVATE);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putString(key, value);
+        editor.apply();
+        editor.commit();
+    }
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        View focusView = getCurrentFocus();
+        if (focusView != null) {
+            Rect rect = new Rect();
+            focusView.getGlobalVisibleRect(rect);
+            int x = (int) ev.getX(), y = (int) ev.getY();
+            if (!rect.contains(x, y)) {
+                InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+                if (imm != null)
+                    imm.hideSoftInputFromWindow(focusView.getWindowToken(), 0);
+                focusView.clearFocus();
+            }
+        }
+        return super.dispatchTouchEvent(ev);
+    }
+
+
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
 }
 /*
     private Bitmap resize(Bitmap bm){
@@ -240,4 +336,8 @@ public class ChildAddActivity extends AppCompatActivity {
         //서버에 저장하는 코드
     }
 }
+<<<<<<< HEAD
 */
+=======
+*/
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e

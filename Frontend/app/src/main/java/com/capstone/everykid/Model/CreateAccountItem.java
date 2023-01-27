@@ -1,6 +1,9 @@
 package com.capstone.everykid.Model;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
 import android.net.Uri;
 
 public class CreateAccountItem{
@@ -20,7 +23,18 @@ public class CreateAccountItem{
     public static String C_name;
     public static String C_age;
     public static Uri C_uri;
+<<<<<<< HEAD
     public static Long P_kid;
     public static String porfileUri;
 
+=======
+    public static String C_img;
+    public static Long P_kid;
+    public static String porfileUri;
+
+    public String getPofileUrl() {
+        return porfileUri;
+    }
+
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
 }

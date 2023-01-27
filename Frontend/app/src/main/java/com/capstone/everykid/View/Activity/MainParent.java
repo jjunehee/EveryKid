@@ -18,14 +18,26 @@ public class MainParent extends AppCompatActivity {
     ProfileFragment profileFragment;
     CommunityFragment communityFragment;
     int flag = 0;
+<<<<<<< HEAD:Frontend/app/src/main/java/com/capstone/everykid/View/Activity/MainParent.java
+=======
+    int child =0;
+    int childadd =0;
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e:Frontend/app/src/main/java/com/capstone/everykid/MainParent.java
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.parent_main);
         Intent intent = getIntent();
+<<<<<<< HEAD:Frontend/app/src/main/java/com/capstone/everykid/View/Activity/MainParent.java
         try {
             flag = intent.getExtras().getInt("cmFlag");
+=======
+
+        try {
+            flag = intent.getExtras().getInt("cmFlag");
+            child = intent.getExtras().getInt("child");
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e:Frontend/app/src/main/java/com/capstone/everykid/MainParent.java
         } catch(NullPointerException e) {
 
         }
@@ -41,11 +53,31 @@ public class MainParent extends AppCompatActivity {
             getSupportFragmentManager().beginTransaction().replace(R.id.containers, communityFragment).commit();
             navigationBarView.setSelectedItemId(R.id.community);
             flag = 0;
+<<<<<<< HEAD:Frontend/app/src/main/java/com/capstone/everykid/View/Activity/MainParent.java
         } else {
+=======
+        } else if(child ==1){
+            child = 0;
+            getSupportFragmentManager().beginTransaction().replace(R.id.containers,profileFragment).commit();
+            navigationBarView.setSelectedItemId(R.id.profile);
+        }
+        else if(childadd==1){
+            childadd = 0;
+            getSupportFragmentManager().beginTransaction().replace(R.id.containers,profileFragment).commit();
+            navigationBarView.setSelectedItemId(R.id.profile);
+        }
+        else {
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e:Frontend/app/src/main/java/com/capstone/everykid/MainParent.java
             getSupportFragmentManager().beginTransaction().replace(R.id.containers, homeFragment).commit();
             navigationBarView.setSelectedItemId(R.id.home);
         }
 
+<<<<<<< HEAD:Frontend/app/src/main/java/com/capstone/everykid/View/Activity/MainParent.java
+=======
+
+
+
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e:Frontend/app/src/main/java/com/capstone/everykid/MainParent.java
         navigationBarView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {

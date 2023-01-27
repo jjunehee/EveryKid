@@ -30,7 +30,10 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_gravity="center_vertical"
+<<<<<<< HEAD
                     android:background="@drawable/round_background"
+=======
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
                     android:src="@drawable/default_profile" />
 
                 <LinearLayout
@@ -117,8 +120,13 @@
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:src="@drawable/default_profile"
                         android:id="@+id/kidprofile_img"
+<<<<<<< HEAD
                         android:layout_width="80dp"
                         android:layout_height="80dp"
+=======
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
 
                         />
                 </FrameLayout>
@@ -134,7 +142,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
+<<<<<<< HEAD
                         android:padding="8dp"
+=======
+                        android:padding="7dp"
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
                         android:textSize="16dp"
                         android:textStyle="bold"/>
                     <TextView
@@ -143,11 +155,16 @@
                         android:id="@+id/child_age"
                         android:text="7세"
                         android:textStyle="bold"
+<<<<<<< HEAD
                         android:padding="8dp"/>
+=======
+                        android:padding="7dp"/>
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
                 </LinearLayout>
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
+<<<<<<< HEAD
                     <Button
                         android:layout_width="wrap_content" android:layout_height="wrap_content"
                         android:layout_gravity="end|center_vertical"
@@ -158,6 +175,17 @@
                         android:textStyle="bold"
                         android:layout_marginRight="10dp"
                        />
+=======
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/child_delete"
+                        android:layout_width="43dp"
+                        android:layout_height="43dp"
+                        android:layout_gravity="end|center_vertical"
+                        android:layout_marginRight="8dp"
+                        android:background="@drawable/ic_baseline_close_24"
+                        android:backgroundTint="@color/gray_text_color" />
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
                 </FrameLayout>
             </LinearLayout>
 

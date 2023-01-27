@@ -45,7 +45,10 @@
                     android:maxHeight="200dp"
                     android:adjustViewBounds="true"
                     android:src="@drawable/default_profile"
+<<<<<<< HEAD
                     android:background="@drawable/round_background"
+=======
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
                     android:onClick="OpenPhoto"/>
 
                 <Button

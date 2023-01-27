@@ -124,10 +124,15 @@ public class SigninParentActivity extends AppCompatActivity {
 
                         setPreference("autoLoginId", userId);
                         setPreference("autoLoginPw", userPassword);
+<<<<<<< HEAD
+=======
+                        setPreference("autoUser","p");
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
 
                         createAccountItem.User = "p";
                         createAccountItem.Name=result.getPname();
                         createAccountItem.Email=result.getPemail();
+<<<<<<< HEAD
 
                         String phone =result.getPphone();
                         createAccountItem.Phone=phone;
@@ -151,6 +156,32 @@ public class SigninParentActivity extends AppCompatActivity {
                         editor.commit();
 
 
+=======
+                        createAccountItem.Phone=result.getPphone();
+                        createAccountItem.Id=userId;
+                        createAccountItem.K_name=result.getKname();
+                        createAccountItem.K_phone=result.getKphone();
+                        createAccountItem.K_address=result.getKaddress();
+                        createAccountItem.Tname=result.getPtname();
+                        createAccountItem.C_img=result.getC_img();
+
+                        createAccountItem.C_name=result.getC_name();
+                        createAccountItem.C_age=result.getC_age();
+                        //로그인할 때 가끔씩 NumberFormatException이 생김. 이유를 모르겠음.
+                        try {
+                            createAccountItem.K_kid = Long.parseLong(result.getKkid());
+                            createAccountItem.P_kid=Long.parseLong(result.getPkid());
+                        } catch (NumberFormatException e) {
+                            return;
+                        }
+
+                        //채팅
+                        SharedPreferences preferences= getSharedPreferences("chataccount",MODE_PRIVATE);
+                        SharedPreferences.Editor editor=preferences.edit();
+                        editor.putString("chat_name",createAccountItem.Name);
+                        editor.commit();
+
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
                         Toast.makeText(SigninParentActivity.this, createAccountItem.Name + "님 환영합니다.", Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(SigninParentActivity.this, MainParent.class);
                         intent.putExtra("userId", userId);
@@ -167,6 +198,7 @@ public class SigninParentActivity extends AppCompatActivity {
 
                         setPreference("autoLoginId", userId);
                         setPreference("autoLoginPw", userPassword);
+<<<<<<< HEAD
 
                         createAccountItem.User = "p";
                         createAccountItem.Name=result.getPname();
@@ -186,6 +218,25 @@ public class SigninParentActivity extends AppCompatActivity {
                         //로그인할 때 가끔씩 NumberFormatException이 생김. 이유를 모르겠음.
                         try {
                             createAccountItem.K_kid = Long.parseLong(result.getKkid());
+=======
+                        setPreference("autoUser","p");
+                        createAccountItem.User = "p";
+                        createAccountItem.Name=result.getPname();
+                        createAccountItem.Email=result.getPemail();
+                        createAccountItem.Phone=result.getPphone();
+                        createAccountItem.Id=userId;
+                        createAccountItem.K_name=result.getKname();
+                        createAccountItem.K_phone=result.getKphone();
+                        createAccountItem.K_address=result.getKaddress();
+                        createAccountItem.Tname=result.getPtname();
+                        createAccountItem.C_name=result.getC_name();
+                        createAccountItem.C_age=result.getC_age();
+                        createAccountItem.C_img=result.getC_img();
+                        //로그인할 때 가끔씩 NumberFormatException이 생김. 이유를 모르겠음.
+                        try {
+                            createAccountItem.K_kid = Long.parseLong(result.getKkid());
+                            createAccountItem.P_kid=Long.parseLong(result.getPkid());
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
                         } catch (NumberFormatException e) {
                             return;
                         }
@@ -316,6 +367,7 @@ public class SigninParentActivity extends AppCompatActivity {
 
                     setPreference("autoLoginId", userId);
                     setPreference("autoLoginPw", userPassword);
+<<<<<<< HEAD
 
                     createAccountItem.User = "p";
                     createAccountItem.Name=result.getPname();
@@ -327,14 +379,32 @@ public class SigninParentActivity extends AppCompatActivity {
                     createAccountItem.Id=userId;
                     createAccountItem.C_name=result.getC_name();
                     createAccountItem.C_age=result.getC_age();
+=======
+                    setPreference("autoUser","p");
+                    createAccountItem.User = "p";
+                    createAccountItem.Name=result.getPname();
+                    createAccountItem.Email=result.getPemail();
+                    createAccountItem.Phone=result.getPphone();
+                    createAccountItem.Id=userId;
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
                     createAccountItem.K_name=result.getKname();
                     createAccountItem.K_phone=result.getKphone();
                     createAccountItem.K_address=result.getKaddress();
                     createAccountItem.Tname=result.getPtname();
+<<<<<<< HEAD
                     createAccountItem.P_kid=Long.parseLong(result.getPkid());
                     //로그인할 때 가끔씩 NumberFormatException이 생김. 이유를 모르겠음.
                     try {
                         createAccountItem.K_kid = Long.parseLong(result.getKkid());
+=======
+                    createAccountItem.C_name=result.getC_name();
+                    createAccountItem.C_age=result.getC_age();
+                    createAccountItem.C_img=result.getC_img();
+                    //로그인할 때 가끔씩 NumberFormatException이 생김. 이유를 모르겠음.
+                    try {
+                        createAccountItem.K_kid = Long.parseLong(result.getKkid());
+                        createAccountItem.P_kid=Long.parseLong(result.getPkid());
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
                     } catch (NumberFormatException e) {
                         return;
                     }

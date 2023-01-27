@@ -3,7 +3,16 @@ package com.capstone.everykid.Model;
 import com.google.gson.annotations.SerializedName;
 
 public class LoginResponseTeacher {
+<<<<<<< HEAD
 
+=======
+    @SerializedName("status")
+    public int resultCode;
+    public Integer getStatus() {
+        return resultCode;
+    }
+    public void setStatus(int resultCode) { this.resultCode = resultCode; }
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
     //선생님 로그인 리스폰스
     @SerializedName("access_TOKEN")
     public String tokenT;

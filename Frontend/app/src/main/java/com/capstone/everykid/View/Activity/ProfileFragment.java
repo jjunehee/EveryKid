@@ -8,6 +8,10 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.content.SharedPreferences;
+<<<<<<< HEAD
+=======
+import android.net.Uri;
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
 import android.os.Bundle;
 
 import androidx.appcompat.app.AlertDialog;
@@ -22,6 +26,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+<<<<<<< HEAD
+=======
+import com.bumptech.glide.Glide;
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
 import com.capstone.everykid.Model.CreateAccountItem;
 import com.capstone.everykid.Model.G;
 import android.widget.Button;
@@ -33,11 +41,19 @@ import android.widget.Toast;
 
 import com.capstone.everykid.Model.LoginResponse;
 import com.capstone.everykid.Model.LoginResponseTeacher;
+<<<<<<< HEAD
+=======
+import com.capstone.everykid.Model.MessageItem;
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
 import com.capstone.everykid.Model.RecyclerItem;
 import com.capstone.everykid.R;
 import com.capstone.everykid.RetrofitAPI.RegisterInterface;
 import com.capstone.everykid.RetrofitAPI.RetrofitAPI;
 import com.capstone.everykid.View.Adapter.RecyclerImageTextAdapter;
+<<<<<<< HEAD
+=======
+import com.squareup.picasso.Picasso;
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -52,6 +68,14 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ProfileFragment extends Fragment {
 
+<<<<<<< HEAD
+=======
+    private static final int RESULT_OK = -1;
+
+    boolean isChanged= false; //프로필을 변경한 적이 있는가?
+
+
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
     //    RecyclerView mRecyclerView=null;
 //    RecyclerImageTextAdapter mAdapter=null;
 //    ArrayList<RecyclerItem>mList= new ArrayList<RecyclerItem>();
@@ -66,6 +90,10 @@ public class ProfileFragment extends Fragment {
     FrameLayout frame, frame2;
     LinearLayout linear, kidprofile;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
     public ProfileFragment() {
         // Required empty public constructor
     }
@@ -83,6 +111,10 @@ public class ProfileFragment extends Fragment {
 
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -112,7 +144,11 @@ public class ProfileFragment extends Fragment {
 
         kinder_name = (TextView) view.findViewById(R.id.kinder_name);
         p_name.setText(createAccountItem.Name);
+<<<<<<< HEAD
         teacher_name.setText(createAccountItem.Tname);
+=======
+        teacher_name.setText(createAccountItem.Tname+" 선생님");
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
 
         info_btn = view.findViewById(R.id.kinder_btn);
         profile_btn = view.findViewById(R.id.profileInfo_btn);
@@ -120,6 +156,7 @@ public class ProfileFragment extends Fragment {
         logout_btn = view.findViewById(R.id.logout_btn);
         teacher_btn = view.findViewById(R.id.teacher_btn);
 
+<<<<<<< HEAD
 
         if (createAccountItem.C_name == null) {
             kidprofile.setVisibility(View.GONE);
@@ -133,6 +170,65 @@ public class ProfileFragment extends Fragment {
         }
 
 
+=======
+        System.out.println("==========================="+createAccountItem.C_name);
+
+        if (createAccountItem.C_name == null) {
+            kidprofile.setVisibility(View.GONE);
+            add_btn.setVisibility(View.VISIBLE);
+        }
+
+        if (createAccountItem.C_name != null) {
+            kidprofile.setVisibility(View.VISIBLE);
+            add_btn.setVisibility(View.GONE);
+            child_name.setText(createAccountItem.C_name);
+            child_age.setText(createAccountItem.C_age + "세");
+           // Picasso.get().load(createAccountItem.C_img).into(child_img);
+
+//            if(createAccountItem.C_uri!=null){
+//                child_img.setImageURI(createAccountItem.C_uri);
+//            }else{
+//                child_img.setImageResource(R.drawable.default_profile);
+//            }
+
+            if(createAccountItem.C_img!=null){
+                Uri imageUri = Uri.parse(createAccountItem.C_img);
+                //child_img.setImageURI(imageUri);
+
+
+                //Uri imgUri=Uri.parse("android.resource://my.package.name/"+R.drawable.default_profile);
+                //child_img.setImageResource(R.drawable.default_profile);
+                //child_img.setImageURI(imgUri);
+
+                Picasso.get().load(createAccountItem.C_img).into(child_img);
+//                Glide.with(this)
+//                        .load(createAccountItem.C_img)
+//                        .into(child_img);
+
+                System.out.println("uri 받아짐");
+            }else{
+                child_img.setImageResource(R.drawable.default_profile);
+            }
+
+//            if (!getPreferenceString("childImage").equals("")){
+//                String uri = getPreferenceString("childImage");
+//                Uri imageUri = Uri.parse(uri);
+//                child_img.setImageURI(imageUri);
+//            }else{
+//                child_img.setImageResource(R.drawable.default_profile);
+//            }
+
+
+            if(pofileUrl!=null){
+                Glide.with(this).load(pofileUrl).into(p_img);
+            }else{
+                Glide.with(this).load(R.drawable.default_profile).into(p_img);
+            }
+        //프로필 사진
+
+
+        }
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
         if (createAccountItem.User.equals("t")) {
             user_status.setText("선생님");
             user_kinder.setText("근무 유치원");
@@ -142,9 +238,12 @@ public class ProfileFragment extends Fragment {
             add_btn.setVisibility(View.GONE);
         }
         kinder_name.setText(createAccountItem.K_name);
+<<<<<<< HEAD
         //프로필 사진 배경에 맞게 자르기
         p_img.setClipToOutline(true);
         child_img.setClipToOutline(true);
+=======
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
 
         //프로필 정보 확인 버튼
         profile_btn.setOnClickListener(new View.OnClickListener() {
@@ -155,6 +254,11 @@ public class ProfileFragment extends Fragment {
             }
         });
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
 //        유치원 정보 버튼
         info_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -175,6 +279,10 @@ public class ProfileFragment extends Fragment {
             }
         });
 
+<<<<<<< HEAD
+=======
+//        로그아웃 버튼
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
         logout_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -208,31 +316,63 @@ public class ProfileFragment extends Fragment {
                         Call<String> call = retrofitAPI.deleteChild(Long.toString(createAccountItem.P_kid));
 
                         call.enqueue(new Callback<String>() {
+<<<<<<< HEAD
                             @Override
                             public void onResponse(Call<String> call, Response<String> response) {
 
                                 if (response.isSuccessful()) {
+=======
+
+                            @Override
+                            public void onResponse(Call<String> call, Response<String> response) {
+                                if (response.isSuccessful() && response.body()!= null) {
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
                                     //통신이 성공된 경우
                                     String result = response.body();
                                     System.out.println("아이 삭제 통신 완료");
                                     createAccountItem.C_name = null;
                                     createAccountItem.C_age = null;
+<<<<<<< HEAD
+=======
+                                    Intent intent = new Intent(getActivity(), MainParent.class);
+                                    intent.putExtra("child", 1);
+                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                    startActivity(intent);
+                                    Toast.makeText(getActivity(), "아이 삭제 완료", Toast.LENGTH_SHORT).show();
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
                                 } else {
                                     //통신이 실패한 경우
                                     System.out.println("아이 삭제 실패");
                                 }
                             }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
                             @Override
                             public void onFailure(Call<String> call, Throwable t) {
                                 //통신 실패 (인터넷 끊김, 예외 발생 등 시스템적인 이유)
                                 t.printStackTrace();
+<<<<<<< HEAD
                             }
                         });
 
                         Intent intent = new Intent(getActivity(), MainParent.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(intent);
+=======
+                                System.out.println("예외발생");
+                                System.out.println("아이 삭제 통신 완료");
+                                createAccountItem.C_name = null;
+                                createAccountItem.C_age = null;
+                                Intent intent2 = new Intent(getActivity(), MainParent.class);
+                                intent2.putExtra("child", 1);
+                                intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                startActivity(intent2);
+                                Toast.makeText(getActivity(), "아이 삭제 완료", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
                     }
                 });
 
@@ -248,6 +388,18 @@ public class ProfileFragment extends Fragment {
 
             }
         });
+<<<<<<< HEAD
         return view;
+=======
+
+
+        return view;
+
+
+    }
+    public String getPreferenceString(String key) {
+        SharedPreferences pref = getActivity().getSharedPreferences("CHILD", context.MODE_PRIVATE);
+        return pref.getString(key, "");
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
     }
 }

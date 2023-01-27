@@ -66,7 +66,11 @@ def mesgSend1(token,id):
     message = messaging.Message (
         notification=messaging.Notification(
             title='EveryKid알림',
+<<<<<<< HEAD
             body='안녕하세요 ' +id+ '가 등원했어요!',
+=======
+            body='안녕하세요 ' +id+ '(이)가 등원했어요!',
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
             ),
         android=messaging.AndroidConfig(
             ttl=datetime.timedelta(seconds=3600),
@@ -98,7 +102,11 @@ def mesgSend2(token,id):
     message = messaging.Message (
         notification=messaging.Notification(
             title='EveryKid알림',
+<<<<<<< HEAD
             body='안녕하세요 ' +id+ '가 하원했어요!',
+=======
+            body='안녕하세요 ' +id+ '(이)가 하원했어요!',
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
             ),
         android=messaging.AndroidConfig(
             ttl=datetime.timedelta(seconds=3600),
@@ -136,8 +144,13 @@ id = 0
 
 # names related to ids: example ==> loze: id=1,  etc
 # 이런식으로 사용자의 이름을 사용자 수만큼 추가해준다.
+<<<<<<< HEAD
 names = ['None', 'Junhee', 'Jinsun', 'hyeokjin', 'ksw']
 firebase_names = ['None', '준희', 'Jinsun', 'hyeokjin', 'ksw']
+=======
+names = ['None', 'Junseung', 'Jinsun', 'hyeokjin', 'ksw']
+firebase_names = ['None', '준승', 'Jinsun', 'hyeokjin', 'ksw']
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
 # Initialize and start realtime video capture
 cam = cv2.VideoCapture(0)
 cam.set(3, 640) # set video widht
@@ -176,7 +189,11 @@ while True:
             
             
             count+=1
+<<<<<<< HEAD
             if(count % 45 == 0 and confidence < 45 ):
+=======
+            if(count % 20 == 0 and confidence < 45 ):
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
                 firebase(firebase_id)
                 userInfo = db.reference('users')
                 for var in userInfo.get().values():

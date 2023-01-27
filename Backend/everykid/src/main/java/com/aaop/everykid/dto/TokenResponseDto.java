@@ -22,4 +22,9 @@ public class TokenResponseDto {
     private String tNAME;
     private String cNAME;
     private String cAGE;
+<<<<<<< HEAD
 }
+=======
+    private String cIMG;
+}
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e

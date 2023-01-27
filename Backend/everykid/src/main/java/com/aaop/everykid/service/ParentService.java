@@ -69,8 +69,13 @@ public class ParentService {
                         .findByKKID(parent.getKKID())
                         .orElseGet(Kindergarten::new);
         Auth auth = authRepository
+<<<<<<< HEAD
                         .findByParentPKID(parent.getPKID())
                         .orElseGet(Auth::new);
+=======
+                .findByParentPKID(parent.getPKID())
+                .orElseGet(Auth::new);
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
 
         Child child = childRepository
                 .findByPKID(parent.getPKID()).orElseGet(Child::new);
@@ -107,6 +112,10 @@ public class ParentService {
                     .tNAME(parent.getTNAME())
                     .cAGE(child.getCAGE())
                     .cNAME(child.getCNAME())
+<<<<<<< HEAD
+=======
+                    .cIMG(child.getCIMG())
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
                     .build();
 
         } else {
@@ -122,4 +131,8 @@ public class ParentService {
     public List<Parent> findUsers() {
         return parentRepository.findAll();
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 77b65ff8e852b6338b288b0944a443f47c37751e
