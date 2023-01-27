@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3383c3ac-f463-440f-988a-cb606a6dfb36" name="변경" comment="변경">
-      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/RetrofitAPI/RetrofitAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/RetrofitAPI/RetrofitAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/ProfileFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/ProfileFragment.java" afterDir="false" />
-    </list>
+    <list default="true" id="3383c3ac-f463-440f-988a-cb606a6dfb36" name="변경" comment="변경" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,6 +82,7 @@
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../mm Project/swingz/swingz" />
     <property name="project.structure.last.edited" value="모듈" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -192,6 +190,12 @@
       <workItem from="1655051071837" duration="125000" />
       <workItem from="1655051683292" duration="118000" />
       <workItem from="1655092709209" duration="2783000" />
+      <workItem from="1655130376109" duration="582000" />
+      <workItem from="1655131020064" duration="489000" />
+      <workItem from="1655571018280" duration="113000" />
+      <workItem from="1663648756531" duration="262000" />
+      <workItem from="1663736644550" duration="22000" />
+      <workItem from="1663737245857" duration="23000" />
     </task>
     <servers />
   </component>
