@@ -298,7 +298,7 @@ git clone https://github.com/jjunehee/Capstone_EveryKid.git
 - 로그아웃 가능
   
 ### 06/03
-```[노수진] 자동 로그인```
+```[최희정] 자동 로그인```
 - 자동 
   
 ### 06/04
